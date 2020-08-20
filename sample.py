@@ -3,6 +3,8 @@
 
 
 def is_prime(n: int) -> bool:
+
+
     if n <= 1:
         return False
 
@@ -21,4 +23,3 @@ def is_prime(n: int) -> bool:
         i += 2
 
     return True
-import sys, os
