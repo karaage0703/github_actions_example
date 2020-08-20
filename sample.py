@@ -1,20 +1,24 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 # reference
-# https://qiita.com/ynakayama/items/8616f4c0c6e372de9a42
+# https://rinatz.github.io/python-book/ch08-02-pytest/
 
+
+def is_prime(n: int) -> bool:
+    if n <= 1:
+        return False
+
+    if n == 2:
+        return True
+
+    if n % 2 == 0:
+        return False
+
+    i = 3
+
+    while i * i <= n:
+        if n % i == 0:
+            return False
+
+        i += 2
+
+    return True
 import sys, os
-
-def list_files(path):
-    for root, dirs, files in os.walk(path):
-        for filename in files:
-            fullname = os.path.join(root, filename)
-            print( fullname )
-
-def main(args):
-    path = args[1]
-    list_files(path)
-
-if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        main(sys.argv)
